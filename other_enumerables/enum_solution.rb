@@ -17,12 +17,21 @@
     # another_reject
     # Duplicates what the #reject method does. do not use #reject
     # Returns an array for all elements of enum for which the given block returns false.
-
+    # example arr = [1, 2, 3, 4, 5]
+    # results in 
     # Precode
     
     # Method
+
+    another_reject_array = [1, 2, 3, 4, 5]
     def another_reject
-      #use another_each
+      array = []
+      self.another_each do |i|
+        unless yield i
+          array << i
+        end
+      end
+      array
     end
 
     # another_find
@@ -33,7 +42,14 @@
     
     # Method
     def another_find
-      #use another_each
+      answer = nil
+      self.another_each do |i|
+        if yield i
+          answer = i
+          return answer
+        end
+      end
+      answer
     end
 
     # another_map
@@ -44,9 +60,12 @@
     
     # Method
     def another_map
-      #use another_each
-    end
-
+      new_array = []
+      self.another_each do |i|
+        new_array << (yield i)
+      end   
+    new_array
+  end
   end
 
   # Exercise 2 Driver Code
@@ -73,7 +92,7 @@
 
     # another_map test
     map_example_test_1 = [1,2,3,4].another_map { |x| x * x } == [1, 4, 9, 16]
-    map_example_test_2 = [1,2,3,4].another_map { |num| num + " cat" } == ["1 cat", "2 cat", "3 cat", "4 cat"]
+    map_example_test_2 = [1,2,3,4].another_map { |num| num.to_s + " cat" } == ["1 cat", "2 cat", "3 cat", "4 cat"]
 
     if map_example_test_1 && map_example_test_2
       puts "#another_map - Pass"
