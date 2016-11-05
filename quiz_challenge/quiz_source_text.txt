@@ -11,3 +11,16 @@ A. 1908
 B. In a 'Back to the Future II' reference
 C. Last Night
 Correct: C
+
+
+[Who is the only Cub to win back-to-back Most Valuable Player Awards?,
+{A. => Phil Regan}, hash(A.) Phil Regan
+{B. => Ernie Banks},
+{C. => Sammy Sosa},
+{Correct: =>  B}]
+
+When did the cubs last win the World Series?
+A. 1908
+B. In a 'Back to the Future II' reference
+C. Last Night
+Correct: C
